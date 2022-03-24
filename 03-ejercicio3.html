@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>ejercicio3</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+function Comisiones()
+{
+    let comision, venta;
+    venta = parseFloat (document.formu.venta.value);
+    comision=0;
+    if(venta>150&&venta<=400)
+        comision=venta*0.1;
+    if(venta>400)
+        comision=venta*0.09+50;
+    document.formu.comision.value = comision;
+}
+    </script>
+    </head>
+    <body>
+        <form name="formu">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="venta">Valor de venta:</label>
+                        </td>
+                        <td>
+                            <input name="venta" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="3" rowspan="1">
+                            <input value="Procesar" type="button" onclick="Comisiones();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="comision">Valor de comision:</label>
+                        </td>
+                        <td>
+                            <input name="comision" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
